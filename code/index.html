@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+  <!-- Load d3.js -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+        background-color: #ffffff;
+    }
+  </style>
+  <link rel="stylesheet" href="sidebar.css">
+</head>
+
+<body>
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <button type="button" onclick="CreateHullPaths(CCW_Line_Intersection, CCW_Line_PathAlgo)">CCW Line Intersection Algorithm</button>
+    <button type="button" onclick="CreateHullPaths(Slope_Line_Intersection, SlopePathAlgo)">Slope Line Intersection Algorithm</button>
+    <!-- <button type="button" onclick="CreateHullPaths(Sweep_Line_Intersection, SLPathAlgo)">Sweep Line Algorithm</button> -->
+    <button type="button" onclick="CreateHullPaths(Translation_Manhattan_Intersection, SlopePathAlgo)">Translation-Manhattan Line Algorithm</button>
+    <!-- <button type="button" onclick="CreateHullPaths(Bentley_Ottoman, BOPathAlgo)">Bentley Ottoman Algorithm</button> -->
+    <button type="button" onclick="CreateHullPaths(Brute_Force, BFPathAlgo)">Brute Force Algorithm</button>
+    <button type="button" onclick="CreateHullPaths(Jarvis_March, JMGSPathAlgo)">Jarvis March Algorithm</button>
+    <button type="button" onclick="CreateHullPaths(Graham_Scan, JMGSPathAlgo)">Graham Scan Algorithm</button>
+    <button type="button" onclick="CreateHullPaths(Quick_Hull, QHPathAlgo)">Quick Hull Algorithm</button>
+    <button type="button" onclick="CreateHullPaths(Grid_Binary_Tree_Hull, QHPathAlgo)">Grid Binary Tree Algorithm</button>
+  </div>
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">&#9776;</button>
+  </div>
+  <div class="parent">
+    <div id="infotitle" class="tcolor">
+      <h2 ></h2>
+      <div id= "desc"></div>
+      <div id= "TComplexity" class="Complexity"></div>
+      <div id= "SComplexity" class="Complexity"></div>
+      <div id= "timespent"></div>
+    </div>
+    <div id="outputscreen">
+      <script src="app.js"></script>
+    </div>
+  </div>
+  <div>
+    <input  type="checkbox" id="grid" onclick="ShowGrid()"> Show Grid
+    <input type="number" id="quantity" name="quantity" min="3" max="300" value="10">
+    <button type="button" onclick="reset(true, false)">Generate Points</button>
+    <button type="button" onclick="reset(true, true)">Generate Research Paper Points</button>
+    <button type="button" onclick="RemoveElement(1)">Clear Paths</button>
+    <button type="button" onclick="RemoveElement(7)">Clear</button>
+    <button type="button" id = "pointerAdd" onclick="addPoints()">Add Points</button>
+    <!-- <button type="button" onclick="JMGuide()">Do Something</button> -->
+  </div>
+</body>
